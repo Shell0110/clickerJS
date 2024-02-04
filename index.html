@@ -5,75 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Clicker | By Shell0110</title>
+    <script>
+
+        
+function expbar() {
+
+var height = Exp/Expneed*100;
+var elem = document.querySelector(".fillup");
+
+if (height <= 100) {
+    elem.style.height = height + "%";
+}
+}
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+// Change pages
+        function changepage(cpage, npage, cbtn, nbtn) {
+
+            document.querySelector(cpage).style.visibility = "hidden";
+            document.querySelector(npage).style.visibility = "visible";
+            document.querySelector(cbtn).classList.remove("active");
+            document.querySelector(nbtn).classList.add("active");
+
+        }
+    </script>
 </head>
 <body>
-
-<!-- <p id="score"></p>
-<button id="btn" onclick="myClick()">Clicks</button>
-
-<button id="add100" onclick="add10()">Add 10</button> 
-<button id="add1000" onclick="add100()">Add 100</button>
-<button id="add100k" onclick="add10k()">Add 10 000</button> 
-<button id="add1m" onclick="add1m()">Add 1 000 000</button>  -->
-    <section class="clicker">
-        <h1>👇Clique ici👇</h1>
-        
-            <div class="bord" onclick="myClick()">
-                <h1 id="score" class="score">0</h1>
-            </div>
-    </section>
-
-    <section class="shop">
-
-        <h1 class="titleflex">Shop</h1>
-        <br />
-        <br />
-        <div class="flex">
-
-            <div class="container">
-                <h1 class="titre">Ajouter 10 clicks</h1>
-                <p>Besoin: 100 clicks</p>
-                <hr />
-                <br />
-                <button class="btn" onclick="addition(100, 10)">Ajouter</button>
-            </div>
-
-            <div class="container">
-                <h1 class="titre">Ajouter 100 clicks</h1>
-                <p>Besoin: 1.000 clicks</p>
-                <hr />
-                <br />
-                <button class="btn" onclick="addition(1000, 100)">Ajouter</button>
-            </div>
-
-            <div class="container">
-                <h1 class="titre">Ajouter 10k clicks</h1>
-                <p>Besoin: 100k clicks</p>
-                <hr />
-                <br />
-                <button class="btn" onclick="addition(100000, 10000)">Ajouter</button>
-            </div>
-
-            <div class="container">
-                <h1 class="titre">Ajouter 1M clicks</h1>
-                <p>Besoin: 100M clicks</p>
-                <hr />
-                <br />
-                <button class="btn" onclick="addition(100_000_000, 1_000_000)">Ajouter</button>
-            </div>
-
-            <div class="container">
-                <h1 class="titre">Autoclicker</h1>
-                <p>Besoin: 100M clicks</p>
-                <hr />
-                <br />
-                <button class="btn" onclick="int()">Ajouter</button>
-            </div>
-
+    <div class="Home" id="Home" align="center">
+        <div class="position">
+            <div class="topnav" id="myTopnav" align="center">
+                <button class="btn-nav" onclick="changepage('.Upgrades', '.Home', '#up', '#Home')" id="home">Home</button>
+                <button class="btn-nav" onclick="changepage('.Home', '.Upgrades', '#Home', '#up')" id="up">Upgrades</button>
+                <button class="btn-nav" href="">Contact</button>
+                <button class="btn-nav" href="">New</button>
+            </div>               
+        </div>   
+                <div class="click">
+                    <h1 id="score" class="score">0 $</h1>
+                    <button id="btn-current" class="btn-clicker" onclick="myClick()">+ 1 $</button>
+                </div>
         </div>
+ 
 
-    </section>
+            <div class="Upgrades" style="visibility: hidden;">
+                <div class="position">
+                    <div class="topnav" id="myTopnav" align="center">
+                        <button class="btn-nav" onclick="changepage('.Upgrades', '.Home', '#up', '#Home')" id="home">Home</button>
+                        <button class="btn-nav" onclick="changepage('.Home', '.Upgrades', '#Home', '#up')" id="up">Upgrades</button>
+                        <button class="btn-nav" href="">Contact</button>
+                        <button class="btn-nav" href="">New</button>
+                    </div> 
+                </div>
+                <section class="flex">
+                <div class="flexposition">
+                    <div class="container">
+                        <h1 class="bonus">10$ per clicks</h1>
+                        <p class="cost">Cost: 500$</p>
+                        <button class="btn-buy" onclick="addition(500, 10)">Buy</button>
+                    </div>
 
-    <script src="script.js"></script>
+                    <div class="container">
+                        <h1 class="bonus">100$ per clicks</h1>
+                        <p class="cost">Cost: 1,500$</p>
+                        <button class="btn-buy" onclick="addition(1500, 100)">Buy</button>
+                    </div>
+
+                    <div class="container">
+                        <h1 class="bonus">1,000$ per clicks</h1>
+                        <p class="cost">Cost: 10,000$</p>
+                        <button class="btn-buy" onclick="addition(10000, 1000)">Buy</button>
+                    </div>
+
+                    <div class="container">
+                        <h1 class="comingsoon">Autoclicker</h1>
+                        <p class="cost">Cost: 100,000$</p>
+                        <button class="btn-coming" onclick="">COMING SOON</button>
+                    </div>
+                </div>   
+                </section>
+
+            </div>
+
+
+
+<script src="script.js"></script>
 </body>
 </html>
+
+
